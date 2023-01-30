@@ -1,5 +1,5 @@
 public class Transactions {
-    String accountNumber;
+        String accountNumber;
         String operationType;
         double transactionAmount;
         double transactionBalance;
@@ -32,27 +32,27 @@ public class Transactions {
         }
 
         public void setAccoundtNumber(String accNumber){
-
+            accountNumber = accNumber;
         }
 
         public void setTransactionType(String opType){
-
+            operationType = opType;
         }
 
         public void setTransactionAmount(double transAmount){
-
+            transactionAmount = transAmount;
         }
 
         public void setTransactionBalance(double transBalance){
-
+            transactionBalance = transBalance;
         }
 
         public void setTransactionError(String transError){
-
+            transactionError = transError;
         }
 
         public void setTransactionStatus(String transStatus){
-
+            transactionStatus = transStatus;
         }
 
         public String toString(){

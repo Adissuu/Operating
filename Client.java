@@ -13,10 +13,10 @@ class Client extends Thread{
         return clientOperation;
     }
     public void setNumberOfTransactions(int nbOfTrans){
-
+        numberOfTransactions = nbOfTrans;
     }
     public void setClientOperation(String operation){
-
+        clientOperation = operation;
     }
     public void readTransactions(){
 

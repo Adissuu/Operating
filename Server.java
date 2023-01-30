@@ -18,13 +18,13 @@ class Server extends Thread {
         return maxNbAccounts;
     }
     public void setNumberOfTransactions(int nbOfTrans) {
-
+        numberOfTransactions = nbOfTrans;
     }
     public void setNumberOfAccounts(int nbOfAcc) {
-
+        numberOfAccounts = nbOfAcc;
     }
     public void setMaxNbAccounts(int nbOfAcc) {
-
+        maxNbAccounts = nbOfAcc;
     }
     public void initializeAccounts( ) {
 

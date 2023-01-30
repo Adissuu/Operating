@@ -21,19 +21,19 @@ public class Accounts {
             return balance;
         }
         public void setAccountNumber(double accNumber) {
-        
+            accountNumber = accNumber;
         }
         public void setAccountType(String accType) {
-        
+            accountType = accType;
         }
         public void setFirstName(String fName) {
-        
+            firstName = fName;
         }
         public void setLastname(String lName) {
-        
+            lastName = lName;
         }
         public void setBalance(double bal) {
-        
+            balance = bal;
         }
         public String toString( ) {
             return "nothing for now";
