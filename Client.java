@@ -4,13 +4,13 @@ class Client extends Thread{
     int maxNbTransactions;
     Transactions[] transcations;
     String clientOperation;
-    Network onjNetwork;
+    //Network objNetwork;
 
     public int getNumberOfTransacrions(){
-
+        return numberOfTransactions;
     }
     public String getClientOperation(){
-
+        return clientOperation;
     }
     public void setNumberOfTransactions(int nbOfTrans){
 
@@ -28,13 +28,10 @@ class Client extends Thread{
 
     }
     public String toString(){
-
+        return "Nothing for now!";
     }
     public void run(){
 
     }
-
-
-
 
 }
