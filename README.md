@@ -9,6 +9,6 @@ transactions such as withdrawals and deposits. In modern banking systems, a cost
 accesses a bank account using an access card at an ATM, at the counter or on the web. 
 # Team Members
 - Ali Fetanat (40158208)
-- Gabriel Dubois(40209252)
+- Gabriel Dubois (40209252)
 # What's left to do
 Writing the run methods for each of the classes and writing the driver class.
