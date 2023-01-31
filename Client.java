@@ -12,7 +12,7 @@ import java.util.InputMismatchException;
 
 /** Client class
  *
- * @author Kerly Titus
+ * @authors Ali Fetanat (40158208), Gabriel Dubois (40209252), Kerly Titus
  */
 
 public class Client { 
