@@ -29,15 +29,6 @@ public class Driver {
         objsender.start();                              
         Client objreceiver = new Client("receiving");
         objreceiver.start();
-
-        // try{
-        // objNetwork.join();
-        // objsender.join();
-        // objServer.join();
-        // objreceiver.join();
-        // }catch(InterruptedException e){}
-
-        /* Complete here the code for the main method ...*/
         
     }
 }

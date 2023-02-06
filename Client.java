@@ -239,9 +239,6 @@ public class Client extends Thread {
         }
         
         
-        
-    	/* Implement here the code for the run method ... */
-        
     }
     
     
