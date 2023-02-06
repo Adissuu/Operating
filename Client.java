@@ -184,6 +184,9 @@ public class Client extends Thread {
          while (i < getNumberOfTransactions())
          {     
         	while( objNetwork.getOutBufferStatus().equals("empty")){
+                if(objNetwork.getServerConnectionStatus().equals("disconnected")){
+                    break;
+                }
                 Thread.yield();
             };  	/* Alternatively, busy-wait until the network output buffer is available */
                                                                         	
@@ -222,18 +225,23 @@ public class Client extends Thread {
             sendClientStartTime = System.currentTimeMillis();
             sendTransactions();
             sendClientEndTime = System.currentTimeMillis();
+            System.out.println("\n Terminating client sending thread - Running time " + (sendClientEndTime - sendClientStartTime));
         }
+       
         
         
         if(clientOperation.equals("receiving")){
             receiveClientStartTime = System.currentTimeMillis();
             receiveTransactions(transact);
             receiveClientEndTime = System.currentTimeMillis();
+            System.out.println("\n Terminating client receiving thread - Running time " + (receiveClientEndTime - receiveClientStartTime));
+            objNetwork.disconnect(objNetwork.getClientIP());
         }
         
-        System.out.println("The running time for sending the transactions is " + (sendClientEndTime - sendClientStartTime));
-        System.out.println("The running time for receiving the transactions is " + (receiveClientEndTime - receiveClientStartTime));
+        
+        
     	/* Implement here the code for the run method ... */
+        
     }
     
     

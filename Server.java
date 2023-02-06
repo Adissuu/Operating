@@ -193,14 +193,18 @@ public class Server extends Thread{
          while ((!objNetwork.getClientConnectionStatus().equals("disconnected")))
          { 
         	 while( (objNetwork.getInBufferStatus().equals("empty"))){
+                 if(objNetwork.getClientConnectionStatus().equals("disconnected")){
+                     break;
+                 }
                  Thread.yield();
+
              };   /* Alternatively, busy-wait until the network input buffer is available */
         	 
         	 if (!objNetwork.getInBufferStatus().equals("empty"))
         	 {
         		 System.out.println("\n DEBUG : Server.processTransactions() - transferring in account " + trans.getAccountNumber());
         		 
-        		 objNetwork.transferIn(trans);                              /* Transfer a transaction from the network input buffer */
+        		 objNetwork.transferIn(trans);                             /* Transfer a transaction from the network input buffer */
              
         		 accIndex = findAccount(trans.getAccountNumber());
         		 /* Process deposit operation */
@@ -318,7 +322,7 @@ public class Server extends Thread{
         processTransactions(trans);
         serverEndTime = System.currentTimeMillis();
     	/* Implement the code for the run method */
-        
+        objNetwork.disconnect(objNetwork.getServerIP());
         System.out.println("\n Terminating server thread - " + " Running time " + (serverEndTime - serverStartTime) + " milliseconds");
            
     }

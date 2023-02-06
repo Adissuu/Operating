@@ -23,19 +23,20 @@ public class Driver {
         
     	Network objNetwork = new Network("network");           /* Activate the network */
         objNetwork.start();
-        Client objsender = new Client("sending");
-        objsender.start();
         Server objServer = new Server();                    /* Initializing the server */
-        objServer.start();                               
+        objServer.start();  
+        Client objsender = new Client("sending");
+        objsender.start();                              
         Client objreceiver = new Client("receiving");
         objreceiver.start();
 
-        try{
-        objNetwork.join();
-        objsender.join();
-        objServer.join();
-        objreceiver.join();
-        }catch(InterruptedException e){}
+        // try{
+        // objNetwork.join();
+        // objsender.join();
+        // objServer.join();
+        // objreceiver.join();
+        // }catch(InterruptedException e){}
+
         /* Complete here the code for the main method ...*/
         
     }
