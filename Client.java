@@ -213,6 +213,7 @@ public class Client extends Thread {
      * @param
      */
     
+
     public void run()
     {   
         long sendClientStartTime = 0, sendClientEndTime = 0, receiveClientStartTime = 0, receiveClientEndTime = 0;
@@ -222,16 +223,16 @@ public class Client extends Thread {
             sendTransactions();
             sendClientEndTime = System.currentTimeMillis();
         }
-        long sendingtimetaken = sendClientEndTime - sendClientStartTime;
+        
         
         if(clientOperation.equals("receiving")){
             receiveClientStartTime = System.currentTimeMillis();
             receiveTransactions(transact);
             receiveClientEndTime = System.currentTimeMillis();
         }
-        long receivingtimetaken = receiveClientEndTime - receiveClientStartTime;
-        System.out.print("The running time for sending the transactions is " + sendingtimetaken);
-        System.out.println("The running time for receiving the transactions is " + receivingtimetaken);
+        
+        System.out.println("The running time for sending the transactions is " + (sendClientEndTime - sendClientStartTime));
+        System.out.println("The running time for receiving the transactions is " + (receiveClientEndTime - receiveClientStartTime));
     	/* Implement here the code for the run method ... */
     }
     

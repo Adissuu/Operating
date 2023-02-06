@@ -451,7 +451,7 @@ public class Network extends Thread{
      * @param inPacket transaction transferred from the input buffer to the server 
      * 
      */
-         public boolean transferIn(Transactions inPacket)
+        public boolean transferIn(Transactions inPacket)
         {
 		System.out.println("\n DEBUG : Network.transferIn - account number " + inComingPacket[outputIndexServer].getAccountNumber());
             inPacket.setAccountNumber(inComingPacket[outputIndexServer].getAccountNumber());
@@ -557,7 +557,12 @@ public class Network extends Thread{
     	while (true)
     	{
             connect(clientIP);
+            connect(serverIP);
 		/* Implement here the code for the run method ... */
-    	}    
+    	}  
+        // if(objreceiver.isAlive()=="false"){
+        //     disconnect(clientIP);
+        //     disconnect(serverIP);
+        // }
     }
 }
