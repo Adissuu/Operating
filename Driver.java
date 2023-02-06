@@ -21,9 +21,17 @@ public class Driver {
     	  * TODO : implement all the operations of main class   																					*
     	  ******************************************************************************************************************************************/
         
-    	Network objNetwork = new Network("network");            /* Activate the network */
+    	Network objNetwork = new Network("network");           /* Activate the network */
         objNetwork.start();
-        Server objServer = new Server();        
+        Client objsender = new Client("sending");
+        objsender.start();
+        Server objServer = new Server();                    /* Initializing the server */
+        objServer.start();                               
+        Client objreceiver = new Client("receiving");
+        objreceiver.start();
+
+        
         /* Complete here the code for the main method ...*/
+        
     }
 }
