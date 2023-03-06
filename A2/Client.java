@@ -113,7 +113,7 @@ public class Client extends Thread {
         
         try
         {
-        	inputStream = new Scanner(new FileInputStream("src/transaction.txt"));
+        	inputStream = new Scanner(new FileInputStream("./src/transaction2.txt"));
         }
         catch(FileNotFoundException e)
         {
@@ -121,7 +121,7 @@ public class Client extends Thread {
             System.out.println("or could not be opened.");
             System.exit(0);
         }
-        while (inputStream.hasNextLine( ))
+        while (inputStream.hasNextLine())
         {
             try
             {   transaction[i] = new Transactions();
@@ -142,7 +142,7 @@ public class Client extends Thread {
         
         //System.out.println("\n DEBUG : Client.readTransactions() - " + getNumberOfTransactions() + " transactions processed");
         
-        inputStream.close( );
+        inputStream.close();
 
      }
      
@@ -234,7 +234,7 @@ public class Client extends Thread {
             sendClientStartTime = System.currentTimeMillis();
             sendTransactions();
             sendClientEndTime = System.currentTimeMillis();
-            System.out.println("\n Terminating client sending thread - Running time " + (sendClientEndTime - sendClientStartTime));
+            System.out.println("\n Terminating client sending thread - Running time " + (sendClientEndTime - sendClientStartTime) + "milliseconds");
         }
        
         

@@ -424,8 +424,9 @@ public class Network extends Thread{
             }
             else
             	setOutBufferStatus("normal"); 
-            
-             return true;
+            mutex2.release();
+            empty2.release();
+            return true;
         }   
     
     /**

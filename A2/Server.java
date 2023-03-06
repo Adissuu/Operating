@@ -28,7 +28,7 @@ public class Server extends Thread{
     private static String serverThreadRunningStatus2;	 /* Running status of thread 2 - waiting, busy, terminated */
     private static String serverThreadRunningStatus3;	 /* Running status of thread 3 - waiting, busy, terminated */
 
-    public static boolean thirdServerThread = true;
+    public static boolean thirdServerThread = false;
     Transactions transaction;         /* Transaction being processed */
 	Network objNetwork;               /* Server object to handle network operations */
 
@@ -178,7 +178,7 @@ public class Server extends Thread{
         
         //System.out.println("\n DEBUG : Server.initializeAccounts() " + getNumberOfAccounts() + " accounts processed");
         
-        inputStream.close( );
+        inputStream.close();
      }
          
     /** 
@@ -372,9 +372,10 @@ public class Server extends Thread{
                 break;
         }
         serverEndTime = System.currentTimeMillis();
-        objNetwork.disconnect(objNetwork.getServerIP());
         System.out.println("\n Terminating server thread - " + serverThreadId + " Running time " + (serverEndTime - serverStartTime) + " milliseconds");
-           
+        if(serverThreadRunningStatus1.equals("terminated") && serverThreadRunningStatus2.equals("terminated") && (!thirdServerThread || serverThreadRunningStatus3.equals("terminated"))) {
+            objNetwork.disconnect(objNetwork.getServerIP());
+        }
     }
 }
 
