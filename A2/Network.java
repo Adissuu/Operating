@@ -369,6 +369,7 @@ public class Network extends Thread{
          public static boolean send(Transactions inPacket) throws InterruptedException {
             empty1.acquire();
             mutex1.acquire();
+            
             inComingPacket[inputIndexClient].setAccountNumber(inPacket.getAccountNumber());
             inComingPacket[inputIndexClient].setOperationType(inPacket.getOperationType());
             inComingPacket[inputIndexClient].setTransactionAmount(inPacket.getTransactionAmount());
@@ -423,7 +424,7 @@ public class Network extends Thread{
             	//System.out.println("\n DEBUG : Network.receive() - outGoingBuffer status " + getOutBufferStatus());
             }
             else
-            	setOutBufferStatus("normal"); 
+            	setOutBufferStatus("normal");
             mutex2.release();
             empty2.release();
             return true;
